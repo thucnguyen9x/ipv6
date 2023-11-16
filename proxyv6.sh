@@ -78,7 +78,7 @@ stacksize 6291456
 flush
 auth strong
 
-users pa43:CL:Pa43PA
+users taind92:CL:TaiND2k
 
 $(awk -F "/" '{print "auth strong\n" \
 "allow " $1 "\n" \
@@ -95,7 +95,7 @@ EOF
 
 gen_data() {
     seq $FIRST_PORT $LAST_PORT | while read port; do
-        echo "pa43/Pa43PA/$IP4/$port/$(gen64 $IP6)"
+        echo "taind92/TaiND2k/$IP4/$port/$(gen64 $IP6)"
     done
 }
 
