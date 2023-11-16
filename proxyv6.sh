@@ -1,5 +1,5 @@
 #!/bin/sh
-#SCRIPT BY TAIND
+#SCRIPT BY PA43
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 
 FIRST_PORT=10000
@@ -78,7 +78,7 @@ stacksize 6291456
 flush
 auth strong
 
-users taind92:CL:TaiND2k
+users pa43:CL:Pa43PA
 
 $(awk -F "/" '{print "auth strong\n" \
 "allow " $1 "\n" \
@@ -95,7 +95,7 @@ EOF
 
 gen_data() {
     seq $FIRST_PORT $LAST_PORT | while read port; do
-        echo "taind92/TaiND2k/$IP4/$port/$(gen64 $IP6)"
+        echo "pa43/Pa43PA/$IP4/$port/$(gen64 $IP6)"
     done
 }
 
@@ -172,7 +172,7 @@ gen_proxy_file_for_user
 echo "Wait 20s for proxy ready"
 sleep 20
 
-DEMOPROXY="http://taind92:TaiND2k@${IP4}:11700"
+DEMOPROXY="http://pa43:Pa43PA@${IP4}:11700"
 CHECKIP=$(curl -x "${DEMOPROXY}" --connect-timeout 10 -s icanhazip.com)
 
 if [ -z "$CHECKIP" ]; then
